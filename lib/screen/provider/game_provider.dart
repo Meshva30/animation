@@ -28,8 +28,9 @@ class GameProvider with ChangeNotifier {
   void matchItem(int index, String data) {
     if (list[index] == data) {
       MatchedIndexes[index] = true;
-      list.remove(data);
-
+      // Remove the item from both lists
+      list.removeAt(index);
+      name.removeAt(index);
       Score += 10;
     } else {
       Score -= 5;
