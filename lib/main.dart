@@ -1,5 +1,8 @@
-import 'package:animation/screen/homescreen.dart';
-import 'package:animation/screen/provider/game_provider.dart';
+
+import 'package:animation/task1/screen/homescreen.dart';
+import 'package:animation/task1/screen/provider/game_provider.dart';
+import 'package:animation/task2/hero/detilsscreen.dart';
+import 'package:animation/task2/hero/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MatchingScreen(),
+      home: Homescreen(),
     );
   }
 }

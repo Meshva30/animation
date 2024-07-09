@@ -17,23 +17,22 @@ class GameProvider with ChangeNotifier {
   ];
 
   bool accepting = false;
-  int Score = 0;
+  int score = 0;
+  final Map<int, bool> matchedIndexes = {};
 
-  final Map<int, bool> MatchedIndexes = {};
+  Map<int, bool> get getMatchedIndexes => matchedIndexes;
 
-  Map<int, bool> get matchedIndexes => MatchedIndexes;
-
-  int get score => Score;
+  int get getScore => score;
 
   void matchItem(int index, String data) {
     if (list[index] == data) {
-      MatchedIndexes[index] = true;
-      // Remove the item from both lists
+      matchedIndexes[index] = true;
+      score += 10;
+
       list.removeAt(index);
       name.removeAt(index);
-      Score += 10;
     } else {
-      Score -= 5;
+      score -= 5;
     }
     notifyListeners();
   }
