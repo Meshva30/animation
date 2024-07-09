@@ -104,8 +104,8 @@ class Homescreen extends StatelessWidget {
                           )
                         ]),
                     child: Padding(
-                      padding:
-                          const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -153,7 +153,8 @@ class Homescreen extends StatelessWidget {
                               Spacer(),
                               Text(
                                 '88%',
-                                style: TextStyle(color: Colors.black, fontSize: 18),
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 18),
                               ),
                             ],
                           )

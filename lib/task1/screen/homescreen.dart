@@ -11,6 +11,9 @@ class MatchingScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        elevation: 10,
+        shadowColor: Colors.black,
+
         backgroundColor: Colors.black,
         title: const Text(
           'Matching Game',
@@ -22,6 +25,7 @@ class MatchingScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
+
             children: [
               Text(
                 'Score: ${gameProvider.getScore}',
@@ -31,7 +35,29 @@ class MatchingScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 50),
-              Row(
+              gameProvider.isGameOver
+                  ? Center(
+                    child: Column(
+
+                                    children: [
+                    Text(
+                      'Game Over!',
+                      style: const TextStyle(
+                        color: Colors.red,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        gameProvider.resetGame();
+                      },
+                      child: const Text('Play Again'),
+                    ),
+                                    ],
+                                  ),
+                  )
+                  : Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
@@ -41,7 +67,8 @@ class MatchingScreen extends StatelessWidget {
                         data: gameProvider.list[index],
                         feedback: container(gameProvider.list[index]),
                         child: container(gameProvider.list[index]),
-                        childWhenDragging: container(gameProvider.list[index]),
+                        childWhenDragging:
+                        container(gameProvider.list[index]),
                       ),
                     ),
                   ),
@@ -49,14 +76,15 @@ class MatchingScreen extends StatelessWidget {
                     children: List.generate(
                       gameProvider.name.length,
                           (index) => DragTarget<String>(
-                        onWillAccept: (data) => true,
-                        onAccept: (data) {
-                          gameProvider.matchItem(index, data);
+                        onWillAcceptWithDetails: (data) => true,
+                        onAcceptWithDetails: (data) {
+                          gameProvider.matchItem(index, data.data);
                         },
                         onLeave: (data) {
                           gameProvider.accepting = false;
                         },
-                        builder: (context, candidateData, rejectedData) =>
+                        builder:
+                            (context, candidateData, rejectedData) =>
                             nameContainer(
                               gameProvider.name[index],
                               gameProvider.getMatchedIndexes[index] == true,
