@@ -168,4 +168,34 @@ class MatchingScreen extends StatelessWidget {
 <video src = "https://github.com/Meshva30/animation/assets/136339359/d54d3a61-4330-4f84-ac21-299f519a3ead">
 </div>
 
+# Hero Widget in Flutter
+
+The `Hero` widget in Flutter is used to create a smooth, animated transition between two routes (pages). It is particularly useful for creating a seamless user experience when navigating between different parts of your app.
+
+## Code Sample
+
+```dart
+child: Hero(
+                tag: 'box',
+                child: Container(
+                  height: 350,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black45,
+                          offset: Offset(0, 12),
+                          blurRadius: 15,
+                        )
+                      ]),
+
+```
+<div align="center">
+<img src="https://github.com/Meshva30/animation/assets/136339359/ed87c1cd-43bc-4d52-a4ab-e0e3198b84ac" height="500px" hspace=20></img>
+<img src="https://github.com/Meshva30/animation/assets/136339359/597750f9-7868-416c-8abf-bd26566dc1b6" height="500px" hspace=20></img>
+  <video src="https://github.com/Meshva30/animation/assets/136339359/82b2e250-e680-4045-8427-4da95a8fb3aa">
+</div>
+    
 
