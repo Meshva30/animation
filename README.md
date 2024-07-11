@@ -197,5 +197,7 @@ child: Hero(
 <img src="https://github.com/Meshva30/animation/assets/136339359/597750f9-7868-416c-8abf-bd26566dc1b6" height="500px" hspace=20></img>
   <video src="https://github.com/Meshva30/animation/assets/136339359/82b2e250-e680-4045-8427-4da95a8fb3aa">
 </div>
-    
 
+##  Animation Widgets
+
+<video src="https://github.com/Meshva30/animation/assets/136339359/b7dc75bc-544c-4614-b05d-f26858c26c50">
